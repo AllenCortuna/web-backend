@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-const expenseSchema = mongoose.Schema({
+const listSchema = mongoose.Schema({
     hotelName: String,
     name: String,
     price: String,
@@ -18,5 +18,5 @@ const expenseSchema = mongoose.Schema({
 
 });
 
-var Expense = mongoose.model('Expense', expenseSchema);
-export default Expense;
+var List = mongoose.model('List', listSchema);
+export default List;
