@@ -6,17 +6,6 @@ const secret = 'test';
 
 
 
-export const getUsers = async (req, res) => { 
-    try {
-        const userModal = await UserModal.find().sort({_id: -1})
-        console.log('getuser ok');
-        res.status(200).json(userModal);
-    } catch (error) {
-        res.status(404).json({ message: error.message });
-    }
-}
-
-
 
 export const signin = async (req, res ) => {
     const { email, password } = req.body;
@@ -56,3 +45,12 @@ export const signup = async (req, res) => {
     }
 }
 
+// export const getUsers = async (req, res) => { 
+//     try {
+//         const userModal = await UserModal.find().sort({_id: -1})
+//         console.log('getuser ok');
+//         res.status(200).json(userModal);
+//     } catch (error) {
+//         res.status(404).json({ message: error.message });
+//     }
+// }
