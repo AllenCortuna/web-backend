@@ -15,7 +15,7 @@ app.use(cors());
 app.use('/user',userRoutes)
 app.use('/list', listRoutes);
 
-app.get('/',(req,res) => {res.send('WebApp React');});
+app.get('/',(req,res) => {res.send('React Records App');});
 
 const PORT = process.env.PORT|| 5000;
 

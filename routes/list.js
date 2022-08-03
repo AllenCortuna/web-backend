@@ -1,12 +1,15 @@
 import express from 'express';
-import { getLists,getList,getOwnLists,createList,updateList,deleteList} from '../controlers/list.js';
+import { getLists,getList,getOwnLists,createList,updateList,deleteList, getListsBySearch} from '../controlers/list.js';
 
 const router = express.Router();
 import auth from '../middleware/auth.js'
 
 
 router.get('/', getLists);
-router.get('/',auth, getOwnLists);
+router.get('/ownLists',auth, getOwnLists);
+router.get('/search', getListsBySearch);
+router.get('/:id', getList);
+
 router.post('/',auth, createList);
 router.get('/:id',auth, getList);
 router.patch('/:id',auth, updateList);
