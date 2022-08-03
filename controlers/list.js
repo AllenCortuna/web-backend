@@ -47,7 +47,6 @@ export const createList = async (req, res) => {
   try {
     await newList.save();
     res.status(201).json(newList);
-    console.log("create ok")
   } catch (error) {
     res.status(409).json({ message: error.message });
   }
