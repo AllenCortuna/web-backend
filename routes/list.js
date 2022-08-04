@@ -6,7 +6,7 @@ import auth from '../middleware/auth.js'
 
 
 router.get('/', getLists);
-router.get('/ownLists',auth, getOwnLists);
+router.get('/ownLists/:myid',auth, getOwnLists);
 router.get('/search', getListsBySearch);
 router.get('/:id', getList);
 

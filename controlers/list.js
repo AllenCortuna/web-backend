@@ -16,10 +16,9 @@ export const getLists = async (req, res) => {
 
 // MARK:
 export const getOwnLists = async (req, res) => {
-  const { myid } = req.params;
+  const { myid } = req.params; //myid must be in routes params
   try {
-    console.log("getOwnLists")
-    const list = await List.find({ creator: myid }).exec();
+    const list = await List.find({ creator: myid });
     res.status(200).json(list);
   } catch (error) {
     res.status(404).json({ message: error.message });
