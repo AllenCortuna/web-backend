@@ -3,12 +3,13 @@ import mongoose from 'mongoose';
 const listSchema = mongoose.Schema({
     name: String,
     price: String,
-    detail: String,
+    tag: String,
+    date: String,
     creator: String,
-    updatedAt: {
-        type: Date,
-        default: new Date(),
-    },
+    // updatedAt: {
+    //     type: Date,
+    //     default: new Date(),
+    // },
     // category: [String],
 
 });

@@ -44,7 +44,7 @@ export const createList = async (req, res) => {
   const newList = new List({
     ...list,
     creator: req.userId,
-    updatedAt: new Date().toISOString(),
+    // updatedAt: new Date().toISOString(),
   });
 
   try {
