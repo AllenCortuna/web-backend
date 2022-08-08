@@ -28,7 +28,6 @@ export const signin = async (req, res) => {
 
 export const signup = async (req, res) => {
   const { email, password } = req.body;
-  console.log("signup attemp")
   try {
     const oldUser = await UserModal.findOne({ email });
     if (oldUser) return res.status(400).json({ message: "User already exist" });
