@@ -91,13 +91,15 @@ export const deleteList = async (req, res) => {
 
 // MARK:
 export const getListsBySearch = async (req, res) => {
-  const { searchQuery } = req.query;
+  const  searchQuery  = req.query;
+  console.log(searchQuery)
   try {
-    const title = new RegExp(searchQuery, "i");
-    const lists = await List.find({
-      $or: [{ title }, { tags: { $in: tags.split(",") } }],
+    const search = new RegExp(searchQuery, "i");
+    const data = await List.find({
+      $or: [{ title: search}, { tags: search}, {date: search}],
     });
-    res.json({ data: lists });
+      // $or: [{ title }, { tags: { $in: tags.split(",") } }],
+    res.json({ data: data});
   } catch (error) {
     res.status(404).json({ message: error.message });
   }
