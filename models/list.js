@@ -4,7 +4,7 @@ const listSchema = mongoose.Schema({
     name: String,
     price: String,
     tag: String,
-    date: Date,
+    date: String,
     creator: String,
     // updatedAt: {
     //     type: Date,
