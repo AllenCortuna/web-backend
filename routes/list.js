@@ -4,15 +4,15 @@ import { getLists,getList,getOwnLists,createList,updateList,deleteList, getLists
 const router = express.Router();
 import auth from '../middleware/auth.js'
 
-
+// WARN: secure route
 router.get('/', getLists);
-router.get('/ownLists/:myid',auth, getOwnLists);
+router.get('/ownLists/:myid', getOwnLists);
 router.get('/search', getListsBySearch);
 router.get('/:id', getList);
 
-router.post('/',auth, createList);
-router.get('/:id',auth, getList);
-router.patch('/:id',auth, updateList);
-router.delete('/:id',auth, deleteList);
+router.post('/', createList);
+router.get('/:id', getList);
+router.patch('/:id', updateList);
+router.delete('/:id', deleteList);
  
 export default router;

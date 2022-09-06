@@ -9,6 +9,7 @@ specifiers:
   jsonwebtoken: ^8.5.1
   mongoose: ^6.2.6
   nodemon: ^2.0.15
+  offline: ^0.0.1
 
 dependencies:
   bcryptjs: 2.4.3
@@ -19,6 +20,7 @@ dependencies:
   jsonwebtoken: 8.5.1
   mongoose: 6.4.0
   nodemon: 2.0.18
+  offline: 0.0.1
 
 packages:
 
@@ -997,6 +999,10 @@ packages:
 
   /object-inspect/1.12.2:
     resolution: {integrity: sha512-z+cPxW0QGUp0mcqcsgQyLVRDoXFQbXOwBaqyF7VIgI4TWNQsDHrBpUQslRmIfAoYWdYzs6UlKJtB2XJpTaNSpQ==}
+    dev: false
+
+  /offline/0.0.1:
+    resolution: {integrity: sha512-LZCFV7HRcQhf826kQ5F1gu/z4l+d0yttmE2MXfzjsPkDyMVLZa6v9UNz4AUNQE7nIatipmnd+ZTR3KrjPr/zKA==}
     dev: false
 
   /on-finished/2.4.1:

@@ -50,16 +50,16 @@ export const createList = async (req, res) => {
   try {
     await newList.save();
     res.status(201).json(newList);
-    console.log("create ok");
   } catch (error) {
     res.status(409).json({ message: error.message });
   }
 };
 
+
 // MARK:
 export const updateList = async (req, res) => {
   const { id } = req.params;
-  const { name, price, detail } = req.body;
+  const { name, price, detail, tag, creator } = req.body;
 
   if (!mongoose.Types.ObjectId.isValid(id))
     return res.status(404).send(`No list with id: ${id}`);
@@ -67,14 +67,14 @@ export const updateList = async (req, res) => {
   const updatedList = {
     name,
     price,
-    detail,
+    tag,
     _id: id,
-    updatedAt: new Date().toISOString(),
+    creator
+    // updatedAt: new Date().toISOString(),
   };
-
   await List.findByIdAndUpdate(id, updatedList, { new: true });
-
   res.json(updatedList);
+  console.log("ok update", updatedList)
 };
 
 // MARK:
