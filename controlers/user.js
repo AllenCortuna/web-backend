@@ -26,7 +26,7 @@ export const signin = async (req, res) => {
   }
 };
 
-export const signup = async (req, res) => {
+export const login = async (req, res) => {
   const { email, password } = req.body;
   try {
     const oldUser = await UserModal.findOne({ email });
